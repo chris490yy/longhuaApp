@@ -1,0 +1,30 @@
+
+
+.signle-employee-page{
+	border-radius: 5px;
+	margin-top: 50px;
+
+}
+
+.employee-col-div {
+	height: 170px;
+	background-color: #00BCD4;
+	text-align: center;
+}
+
+.employee-item-title {
+    margin-top: 7%;
+	font-size: 20px;
+}
+
+.employee-item-content {
+	margin-top: 8%;
+    font-size: 30px;
+}
+
+.employee-item-button {
+	font-size: 30px;
+    background-color: aquamarine;
+    height: 50px;
+    width: 100%;
+}

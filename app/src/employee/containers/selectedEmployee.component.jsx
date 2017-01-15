@@ -5,6 +5,8 @@ import SidebarComponent from '../../core/components/sidebar.component.jsx';
 import * as employeeActions from '../actions/employee.action.js';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+const URL = "https://longhua.herokuapp.com/";
+
 
 require('../../../styles/article.style.css');
 
@@ -15,7 +17,7 @@ class SelectedEmployeeComponent extends React.Component{
     this.state = { employee : {}};
   }
   componentDidMount(){
-    axios.get('http://localhost:8000/employees/' + this.props.params.id ).then((data) => {
+    axios.get(URL + 'employees/' + this.props.params.id ).then((data) => {
       this.setState({ employee :  data.data});
     }).catch((err) => console.log(err));
   }

@@ -6,6 +6,8 @@ import RadioGroup from 'react-radio';
 import 'react-select2-wrapper/css/select2.css';
 import { cancelInfoEditing, baseInfoEdited } from '../actions/profile.action';
 require('../../../styles/profile.style.css');
+const URL = "https://longhua.herokuapp.com/";
+
 
 class EditProfileComponent extends React.Component{
 
@@ -19,7 +21,7 @@ class EditProfileComponent extends React.Component{
   componentDidMount(){
 
     $.ajax({
-            url: 'http://localhost:8000/users/' + cookie.load('userId'),
+            url: URL + 'users/' + cookie.load('userId'),
             dataType: 'json',
             type: "GET",
             cache: false,
@@ -201,7 +203,7 @@ class EditProfileComponent extends React.Component{
   updateProfile(){
     if(this.state.emailVerify && this.state.phoneVerify){
       $.ajax({
-        url: 'http://localhost:8000/users/' + cookie.load("userId"),
+        url: URL + 'users/' + cookie.load("userId"),
         dataType: 'json',
         type: "PUT",
         data: {jobTitle : this.refs.jobTitle.value, skills : $('#skills').val(), profileImage : this.state.userInfo.profileImage, homeAddress : this.refs.homeAddress.value, email : this.refs.email.value, phone : this.refs.phone.value, subscribed : this.refs.subscribed.value},

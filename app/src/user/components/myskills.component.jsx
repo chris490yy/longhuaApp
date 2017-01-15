@@ -2,6 +2,8 @@ import React from "react";
 import $ from "jquery";
 import cookie from 'react-cookie';
 import { baseInfoEditing } from '../actions/profile.action';
+const URL = "https://longhua.herokuapp.com/";
+
 class MySkillsComponent extends React.Component{
 
 	constructor() {
@@ -12,7 +14,7 @@ class MySkillsComponent extends React.Component{
 	componentDidMount(){
 
 		$.ajax({
-            url: 'http://localhost:8000/users/' + cookie.load('userId'),
+            url: URL + 'users/' + cookie.load('userId'),
             dataType: 'json',
             type: "GET",
             cache: false,

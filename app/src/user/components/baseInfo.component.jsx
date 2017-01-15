@@ -3,6 +3,8 @@ import { baseInfoEditing } from '../actions/profile.action';
 import cookie from 'react-cookie';
 import $ from "jquery";
 require('../../../styles/index.style.css');
+const URL = "https://longhua.herokuapp.com/";
+
 
 class BaseInfoComponent extends React.Component{
 
@@ -15,7 +17,7 @@ class BaseInfoComponent extends React.Component{
   componentDidMount(){
 
     $.ajax({
-            url: 'http://localhost:8000/users/' + cookie.load('userId'),
+            url: URL + 'users/' + cookie.load('userId'),
             dataType: 'json',
             type: "GET",
             cache: false,

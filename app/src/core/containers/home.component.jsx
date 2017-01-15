@@ -10,7 +10,7 @@ import { bindActionCreators } from 'redux';
 import * as employeeActions from '../../employee/actions/employee.action';
 import departmentList from '../../../init/department.js';
 
-
+const URL = "https://longhua.herokuapp.com/";
 class HomeComponent extends React.Component{
 
 
@@ -35,7 +35,7 @@ class HomeComponent extends React.Component{
 
 	    departmentNameList.forEach((departmentName, index) => {
 	    	if(departmentName !== '新员工') {	
-		    	axios.get('http://localhost:8000/employees/number/' + departmentName).then((res) => {
+		    	axios.get(URL + 'employees/number/' + departmentName).then((res) => {
 		    		let employees = res.data.employees;
 		    		if(employees.total === 0) {
 		    			departmentList[index].description = NoEmployee;

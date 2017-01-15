@@ -4,6 +4,9 @@ import cookie from 'react-cookie';
 import $ from "jquery";
 import { userSignup } from '../actions/user.action';
 require('../../../styles/index.style.css');
+const URL = "https://longhua.herokuapp.com/";
+
+
 class SigninComponent extends React.Component{
 
   constructor() {
@@ -81,7 +84,7 @@ class SigninComponent extends React.Component{
   submitForm(username, password) {
 
         $.ajax({
-            url: 'http://localhost:8000/users/login',
+            url: URL + 'users/login',
             dataType: 'json',
             type: "POST",
             data: {username : username, password : password},

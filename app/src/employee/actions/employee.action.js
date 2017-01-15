@@ -1,4 +1,6 @@
 'use strict';
+const URL = "https://longhua.herokuapp.com/";
+
 
 import store from '../../../store.js';
 
@@ -29,19 +31,19 @@ export function resetCurrentEmployee() {
 }
 
 function deletePostFromServer(employeeId) {
-  return axios.delete('http://localhost:8000/employees/' + employeeId)
+  return axios.delete(URL + 'employees/' + employeeId)
 }
 
 function postRequestToServer(employee) {
-  return axios.post('http://localhost:8000/employees', {employee})
+  return axios.post(URL + 'employees', {employee})
 }
 
 function putRequestToServer(employee) {
-  return axios.put('http://localhost:8000/employees/' + employee._id, {employee})
+  return axios.put(URL + 'employees/' + employee._id, {employee})
 }
 
 function getRequestToServer(department) {
-  return axios.get('http://localhost:8000/employees' + '/department/' + department)
+  return axios.get(URL + 'employees' + '/department/' + department)
 }
 
 export function asynDeleteMiddleware(employeeId, department) {

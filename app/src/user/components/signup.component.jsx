@@ -4,6 +4,8 @@ import cookie from 'react-cookie';
 import $ from "jquery";
 import { userSignin } from '../actions/user.action';
 require('../../../styles/index.style.css');
+const URL = "https://longhua.herokuapp.com/";
+
 class SingupComponent extends React.Component{
 
 
@@ -94,7 +96,7 @@ class SingupComponent extends React.Component{
   submitForm(username, password) {
 
         $.ajax({
-            url: 'http://localhost:8000/users/register',
+            url: URL + 'users/register',
             dataType: 'json',
             type: "POST",
             data: {username : username, password : password},

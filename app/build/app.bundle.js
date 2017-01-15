@@ -27256,6 +27256,7 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	__webpack_require__(246);
+	var URL = "https://longhua.herokuapp.com/";
 
 	var SigninComponent = function (_React$Component) {
 	  _inherits(SigninComponent, _React$Component);
@@ -27379,7 +27380,7 @@
 	    value: function submitForm(username, password) {
 
 	      _jquery2.default.ajax({
-	        url: 'http://localhost:8000/users/login',
+	        url: URL + 'users/login',
 	        dataType: 'json',
 	        type: "POST",
 	        data: { username: username, password: password },
@@ -38402,6 +38403,7 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	__webpack_require__(246);
+	var URL = "https://longhua.herokuapp.com/";
 
 	var SingupComponent = function (_React$Component) {
 	  _inherits(SingupComponent, _React$Component);
@@ -38545,7 +38547,7 @@
 	    value: function submitForm(username, password) {
 
 	      _jquery2.default.ajax({
-	        url: 'http://localhost:8000/users/register',
+	        url: URL + 'users/register',
 	        dataType: 'json',
 	        type: "POST",
 	        data: { username: username, password: password },
@@ -38634,6 +38636,8 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	var URL = "https://longhua.herokuapp.com/";
+
 	var HomeComponent = function (_React$Component) {
 		_inherits(HomeComponent, _React$Component);
 
@@ -38667,7 +38671,7 @@
 
 				departmentNameList.forEach(function (departmentName, index) {
 					if (departmentName !== '新员工') {
-						axios.get('http://localhost:8000/employees/number/' + departmentName).then(function (res) {
+						axios.get(URL + 'employees/number/' + departmentName).then(function (res) {
 							var employees = res.data.employees;
 							if (employees.total === 0) {
 								_department2.default[index].description = NoEmployee;
@@ -40998,6 +41002,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	var URL = "https://longhua.herokuapp.com/";
+
 	function addEmployee(employee) {
 	  return { type: 'ADD_EMPLOYEE', employee: employee };
 	}
@@ -41025,19 +41031,19 @@
 	}
 
 	function deletePostFromServer(employeeId) {
-	  return axios.delete('http://localhost:8000/employees/' + employeeId);
+	  return axios.delete(URL + 'employees/' + employeeId);
 	}
 
 	function postRequestToServer(employee) {
-	  return axios.post('http://localhost:8000/employees', { employee: employee });
+	  return axios.post(URL + 'employees', { employee: employee });
 	}
 
 	function putRequestToServer(employee) {
-	  return axios.put('http://localhost:8000/employees/' + employee._id, { employee: employee });
+	  return axios.put(URL + 'employees/' + employee._id, { employee: employee });
 	}
 
 	function getRequestToServer(department) {
-	  return axios.get('http://localhost:8000/employees' + '/department/' + department);
+	  return axios.get(URL + 'employees' + '/department/' + department);
 	}
 
 	function asynDeleteMiddleware(employeeId, department) {
@@ -44478,6 +44484,7 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	__webpack_require__(246);
+	var URL = "https://longhua.herokuapp.com/";
 
 	var BaseInfoComponent = function (_React$Component) {
 	  _inherits(BaseInfoComponent, _React$Component);
@@ -44498,7 +44505,7 @@
 	    value: function componentDidMount() {
 
 	      _jquery2.default.ajax({
-	        url: 'http://localhost:8000/users/' + _reactCookie2.default.load('userId'),
+	        url: URL + 'users/' + _reactCookie2.default.load('userId'),
 	        dataType: 'json',
 	        type: "GET",
 	        cache: false,
@@ -44694,6 +44701,7 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	__webpack_require__(333);
+	var URL = "https://longhua.herokuapp.com/";
 
 	var EditProfileComponent = function (_React$Component) {
 	  _inherits(EditProfileComponent, _React$Component);
@@ -44715,7 +44723,7 @@
 	    value: function componentDidMount() {
 
 	      _jquery2.default.ajax({
-	        url: 'http://localhost:8000/users/' + _reactCookie2.default.load('userId'),
+	        url: URL + 'users/' + _reactCookie2.default.load('userId'),
 	        dataType: 'json',
 	        type: "GET",
 	        cache: false,
@@ -44960,7 +44968,7 @@
 	    value: function updateProfile() {
 	      if (this.state.emailVerify && this.state.phoneVerify) {
 	        _jquery2.default.ajax({
-	          url: 'http://localhost:8000/users/' + _reactCookie2.default.load("userId"),
+	          url: URL + 'users/' + _reactCookie2.default.load("userId"),
 	          dataType: 'json',
 	          type: "PUT",
 	          data: { jobTitle: this.refs.jobTitle.value, skills: (0, _jquery2.default)('#skills').val(), profileImage: this.state.userInfo.profileImage, homeAddress: this.refs.homeAddress.value, email: this.refs.email.value, phone: this.refs.phone.value, subscribed: this.refs.subscribed.value },
@@ -51596,6 +51604,7 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	__webpack_require__(333);
+	var URL = "https://longhua.herokuapp.com/";
 
 	var MyPostComponent = function (_React$Component) {
 		_inherits(MyPostComponent, _React$Component);
@@ -51613,7 +51622,7 @@
 			key: 'componentDidMount',
 			value: function componentDidMount() {
 				_jquery2.default.ajax({
-					url: 'http://localhost:8000/articles/author/' + _reactCookie2.default.load('userId'),
+					url: URL + 'articles/author/' + _reactCookie2.default.load('userId'),
 					dataType: 'json',
 					type: "GET",
 					cache: false,
@@ -51769,6 +51778,8 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	var URL = "https://longhua.herokuapp.com/";
+
 	var MySkillsComponent = function (_React$Component) {
 	  _inherits(MySkillsComponent, _React$Component);
 
@@ -51786,7 +51797,7 @@
 	    value: function componentDidMount() {
 
 	      _jquery2.default.ajax({
-	        url: 'http://localhost:8000/users/' + _reactCookie2.default.load('userId'),
+	        url: URL + 'users/' + _reactCookie2.default.load('userId'),
 	        dataType: 'json',
 	        type: "GET",
 	        cache: false,
@@ -51896,6 +51907,7 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	__webpack_require__(333);
+	var URL = "https://longhua.herokuapp.com/";
 
 	var MyCommentedBlogComponent = function (_React$Component) {
 		_inherits(MyCommentedBlogComponent, _React$Component);
@@ -51914,7 +51926,7 @@
 			value: function componentDidMount() {
 
 				_jquery2.default.ajax({
-					url: 'http://localhost:8000/comments/articles/' + _reactCookie2.default.load('username'),
+					url: URL + 'comments/articles/' + _reactCookie2.default.load('username'),
 					dataType: 'json',
 					type: "GET",
 					cache: false,
@@ -52179,6 +52191,8 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	var URL = "https://longhua.herokuapp.com/";
+
 	__webpack_require__(317);
 
 	var SelectedEmployeeComponent = function (_React$Component) {
@@ -52198,7 +52212,7 @@
 	    value: function componentDidMount() {
 	      var _this2 = this;
 
-	      axios.get('http://localhost:8000/employees/' + this.props.params.id).then(function (data) {
+	      axios.get(URL + 'employees/' + this.props.params.id).then(function (data) {
 	        _this2.setState({ employee: data.data });
 	      }).catch(function (err) {
 	        return console.log(err);

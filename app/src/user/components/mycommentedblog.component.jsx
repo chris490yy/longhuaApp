@@ -4,6 +4,8 @@ import cookie from 'react-cookie';
 import { baseInfoEdited } from '../actions/profile.action';
 import { hashHistory } from 'react-router';
 require('../../../styles/profile.style.css');
+const URL = "https://longhua.herokuapp.com/";
+
 
 class MyCommentedBlogComponent extends React.Component{
 
@@ -15,7 +17,7 @@ class MyCommentedBlogComponent extends React.Component{
 	componentDidMount(){
 
     	$.ajax({
-            url: 'http://localhost:8000/comments/articles/' + cookie.load('username'),
+            url: URL + 'comments/articles/' + cookie.load('username'),
             dataType: 'json',
             type: "GET",
             cache: false,

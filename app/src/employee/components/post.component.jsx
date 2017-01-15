@@ -21,7 +21,7 @@ class PostComponent extends React.Component{
         idNumber: '',
         phoneNumber: '',
         onBoardDate: '',
-        department: ''
+        department: '总经办'
       };
       this.employee = store.getState().currentEmployee;
 

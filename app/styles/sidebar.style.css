@@ -28,6 +28,7 @@
 
 .demo-drawer {
   border: none;
+  width: 15%;
   left: 250px;
   background-color: #1a9cb0;
   top: 64px;

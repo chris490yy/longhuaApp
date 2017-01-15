@@ -64,6 +64,7 @@
 }
 
 .topbar{
+  overflow-x: hidden;
 }
 
 .comment{

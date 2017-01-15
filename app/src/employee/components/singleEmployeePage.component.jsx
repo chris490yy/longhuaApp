@@ -108,7 +108,6 @@ class SingleEmployeePageComponent extends React.Component{
 
     getInitialDate(birthday) {
       if(!birthday) {
-        console.log(birthday, "wrong birthday!!!!!")
         return;
       }
       return birthday.slice(0,10);

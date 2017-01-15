@@ -87,7 +87,7 @@ exports.addEmployee = (req, res) => {
   employee.save(function(err, data){
       if(err) console.log(err);
       else {
-        console.log('successfully added', doc);
+        console.log('successfully added', data);
         res.jsonp(data);
       }
   });

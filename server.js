@@ -4,7 +4,10 @@ app.get('/', (req, res) => {
   res.sendfile('index.html')
 })
 
-app.listen(8000, function(err){
-  if(err) console.log(err, "!!!!!!!!!!!!!")
-  else console.log("server starts at 8000");
+var port = process.env.PORT || 8000;
+
+
+app.listen(port, function(err){
+  if(err) console.log(err, "server start error!!")
+  else console.log("server starts at " + port);
 });

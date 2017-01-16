@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import cookie from 'react-cookie';
-import $ from "jquery";
 import SingleTopicComponent from './singletopic.component.jsx';
 
 require('../../../styles/category.style.css');

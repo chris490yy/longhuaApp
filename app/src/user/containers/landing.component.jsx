@@ -2,7 +2,6 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { Link, hashHistory } from 'react-router';
 import cookie from 'react-cookie';
-import $ from "jquery";
 import { connect } from 'react-redux';
 import SigninComponent from '../components/signin.component.jsx';
 import SignupComponent from '../components/signup.component.jsx';

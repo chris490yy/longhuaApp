@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import cookie from 'react-cookie';
-import $ from "jquery";
 import { userSignin } from '../actions/user.action';
 require('../../../styles/index.style.css');
 const URL = "https://longhua.herokuapp.com/";
@@ -84,37 +83,41 @@ class SingupComponent extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     if(this.state.password != this.state.confirmPassword){
-      this.setState({errMsg : "passwords do not match!"});
+      this.setState({errMsg : "密码错误!"});
       return;
     }
     if(this.state.username.length > 6 && this.state.password.length > 6){
       this.submitForm(this.state.username, this.state.password);
     }else{
-      this.setState({errMsg : 'username and password should be longer than 6 letters'});
+      this.setState({errMsg : '用户名或密码不能少于6位！'});
     }
   }
   submitForm(username, password) {
 
-        $.ajax({
-            url: URL + 'users/register',
-            dataType: 'json',
-            type: "POST",
-            data: {username : username, password : password},
-            cache: false,
-            success: function(data) {
-              if(data.code && data.code == 11000){
-                this.setState({errMsg : 'username already exists!'});
-              }else{
-                cookie.save('username', data.username, { path: '/' });
-                cookie.save('userId', data._id, { path: '/' });
-                hashHistory.push('/home');
-              }
-            }.bind(this),
-            error: function(xhr, status, err) {
-              this.setState({errMsg : 'register failed, please try again later!'});
-              console.error(error, err.toString());
-            }.bind(this)
-          });
+        axios({
+          method: 'POST',
+          url: URL + 'users/register',
+          data: {
+            username : username,
+            password : password
+          },       
+        }).then(data => {
+
+          if(data.data.code && data.data.code == 11000){
+            this.setState({errMsg : '用户名重复!'});
+            console.log("dupilicate!!!");
+          }else{
+            console.log("in jump home");
+
+            cookie.save('username', data.username, { path: '/' });
+            cookie.save('userId', data._id, { path: '/' });
+            hashHistory.push('/home');
+          }
+        })
+        .catch(err => {
+              this.setState({errMsg : '注册失败， 请重试'});
+              console.error(err, "wrong!!!!!!!!!!!!!!!!!!");
+        });
    }
 }
 

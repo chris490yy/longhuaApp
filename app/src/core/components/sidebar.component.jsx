@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import cookie from 'react-cookie';
-import $ from "jquery";
 import store from "../../../store.js";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';

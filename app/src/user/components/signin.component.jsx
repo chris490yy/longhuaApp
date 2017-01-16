@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 import cookie from 'react-cookie';
-import $ from "jquery";
 import { userSignup } from '../actions/user.action';
 require('../../../styles/index.style.css');
 const URL = "https://longhua.herokuapp.com/";
@@ -51,7 +50,7 @@ class SigninComponent extends React.Component{
                       <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onClick={this.handleSubmit.bind(this)}>
                         Sign in
                       </button>
-                      <Link to='/' onClick={this.props.userSignup}>No account? Sign Up</Link>
+                      //<Link to='/' onClick={this.props.userSignup}>No account? Sign Up</Link>
                     </div>
                     <div className='info'>
                       <br></br>
@@ -78,27 +77,27 @@ class SigninComponent extends React.Component{
     if(this.state.username.length > 6 && this.state.password.length > 6){
       this.submitForm(this.state.username, this.state.password);
     }else{
-      this.setState({errMsg : 'username and password should be longer than 6 letters'});
+      this.setState({errMsg : '用户名或密码至少为6位'});
     }
   }
   submitForm(username, password) {
-
-        $.ajax({
-            url: URL + 'users/login',
-            dataType: 'json',
-            type: "POST",
-            data: {username : username, password : password},
-            cache: false,
-            success: function(data) {
-              cookie.save('username', data.username, { path: '/' });
-              cookie.save('userId', data._id, { path: '/' });
-              hashHistory.push('/home');
-            }.bind(this),
-            error: function(xhr, status, err) {
-              this.setState({errMsg : 'username and password do not match'});
-              console.error(error, err.toString());
-            }.bind(this)
-          });
+        axios({
+          method: 'POST',
+          url: URL + 'users/login',
+          data: {
+            username : username,
+            password : password
+          },       
+        }).then(data => {
+          console.log(data, "success login!!!!!!!!!!!!!");
+          cookie.save('username', data.username, { path: '/' });
+          cookie.save('userId', data._id, { path: '/' });
+          hashHistory.push('/home');
+        })
+        .catch(err => {
+              this.setState({errMsg : '用户名或密码错误'});
+              console.error(err, "wrong!!!!!!!!!!!!!!!!!!");
+        });
    }
 }
 export default SigninComponent;

@@ -13,27 +13,17 @@ class LandingComponent extends React.Component{
 
   constructor() {
     super();
-
-    // this.state = { username : cookie.load('username'), userId : cookie.load('userId') };
   }
 
   render() {
+    return <SigninComponent {...this.props} />
+    // if (this.props.loginOrRegister === 'signin') {
 
-    if (this.props.loginOrRegister === 'signin') {
+    //   return <SigninComponent {...this.props} />
+    // } else {
 
-      return <SigninComponent {...this.props} />
-    } else {
-
-      return <SignupComponent {...this.props} />
-    }
-  }
-
-  logout() {
-
-    // cookie.remove('username', { path: '/' });
-    // cookie.remove('userId', { path: '/' });
-    // this.setState({username : undefined, userId : undefined});
-
+    //   return <SignupComponent {...this.props} />
+    // }
   }
 }
 

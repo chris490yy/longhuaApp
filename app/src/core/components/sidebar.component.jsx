@@ -52,13 +52,6 @@ class SidebarComponent extends React.Component{
 			)
 	}
 
-
-	logout() {
-		cookie.remove('username', { path: '/' });
-		cookie.remove('userId', { path: '/' });
-		this.setState({username : undefined, userId : undefined});
-	}
-
 	goToDepartment(department){
 		this.props.asynGetEmployeeByDepartmentMiddleware(department);
 		this.props.resetCurrentEmployee();

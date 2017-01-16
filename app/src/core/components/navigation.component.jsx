@@ -17,7 +17,7 @@ class NavigationComponent extends React.Component{
 			<div className="topbar">
 			<div className="mdl-layout__header">
 			<div className="mdl-layout__header-row" >
-				<span className="mdl-layout-title" onClick={this.goHomePage}>TechBlog</span>
+				<span className="mdl-layout-title" onClick={this.goHomePage}>隆华</span>
 			<div className="mdl-layout-spacer"></div>
 
 			{(() => {
@@ -60,11 +60,6 @@ class NavigationComponent extends React.Component{
 		this.setState({username : undefined, userId : undefined});
 		hashHistory.push('/');
 
-	}
-
-	profile(){
-
-		hashHistory.push('/profile');
 	}
 }
 export default NavigationComponent

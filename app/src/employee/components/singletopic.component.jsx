@@ -25,7 +25,7 @@ class SingleTopicComponent extends React.Component{
             <img src={this.props.imgsrc}/>
             <figcaption>
               <h2><span>{this.props.department}</span></h2>
-              <p>{this.props.description}.</p>
+              <p className="pplNum">{this.props.description}.</p>
             </figcaption>
           </figure>
         </div>

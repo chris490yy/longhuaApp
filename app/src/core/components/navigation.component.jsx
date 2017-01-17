@@ -16,7 +16,7 @@ class NavigationComponent extends React.Component{
 			<div className="topbar">
 			<div className="mdl-layout__header">
 			<div className="mdl-layout__header-row" >
-				<span className="mdl-layout-title" onClick={this.goHomePage}>隆华</span>
+				<button className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onClick={this.goHomePage}>隆华</button>
 			<div className="mdl-layout-spacer"></div>
 
 			{(() => {

@@ -1,5 +1,6 @@
 'use strict';
 var path = require("path");
+var webpack = require("webpack");
 
 module.exports = {
   entry: "./app/main.js",
@@ -26,5 +27,8 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
-  }
+  },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({minimize: true})
+  ]
 }

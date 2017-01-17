@@ -26,7 +26,7 @@ class HomeComponent extends React.Component{
 	}
 
 	ajaxCallForCategory() {
-		const NoEmployee = "总人数 0 人, 正式员工 0 人， 临时工 0 人";
+		const NoEmployee = "总人数 0 人  正式员工 0 人  临时工 0 人";
 	    let employeesByDepartment = [];
 	    let departmentNameList = departmentList.map((department) => {
 	        return department.departmentName;
@@ -66,7 +66,7 @@ class HomeComponent extends React.Component{
 	}
 
 	employeesNumber(total, tempo, perma) {
-		return "总人数 " + total + "人, 正式员工 " + perma + "人， 临时工 " + tempo + "人";
+		return "总人数 " + total + "人  正式员工 " + perma + "人  临时工 " + tempo + "人";
 	}
 }
 function mapDispatchToProps(dispatch) {

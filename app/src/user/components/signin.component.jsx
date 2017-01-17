@@ -48,15 +48,10 @@ class SigninComponent extends React.Component{
                     </div>
                     <div className='control'>
                       <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onClick={this.handleSubmit.bind(this)}>
-                        Sign in
+                        登录
                       </button>
-                      //<Link to='/' onClick={this.props.userSignup}>No account? Sign Up</Link>
                     </div>
                     <div className='info'>
-                      <br></br>
-                      <b>Information for Employees</b>
-                      <br></br>
-                      <br></br>
                     </div>
 
                   </div>
@@ -64,9 +59,11 @@ class SigninComponent extends React.Component{
               </div>
           )
   }
+
+  //<Link to='/' onClick={this.props.userSignup}>No account? Sign Up</Link>
   updateUsername(e){
     this.setState({username : e.target.value});
-    //console.log(this.state);
+
   }
   updatePassword(e){
     this.setState({password : e.target.value});

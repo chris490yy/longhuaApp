@@ -145,6 +145,10 @@ section {
 	opacity: 0;
 }
 
+.tt .pplNum {
+	font-size: 30px;
+}
+
 .tt figure h2 {
 	word-spacing: -0.15em;
 	font-weight: 300;
